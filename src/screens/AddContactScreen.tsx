@@ -9,7 +9,7 @@ import {
   FlatList,
   ActivityIndicator,
 } from 'react-native';
-import {  uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
 import StorageService from '../storage/StorageService';
 import { Contact, Device } from '../types';
 
@@ -100,7 +100,7 @@ export const AddContactScreen: React.FC<AddContactScreenProps> = ({
       navigation.goBack();
     } catch (error) {
       console.error('Erreur lors de l\'ajout du contact:', error);
-      Alert.alert('Erreur', 'Impossible d\'ajouter le contact');
+      Alert.alert('Erreur', 'Impossible d\'ajouter le contact' + error?.toString()) ;
     }
   };
 
